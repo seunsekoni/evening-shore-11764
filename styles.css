@@ -1,0 +1,29 @@
+body{
+  margin-top: 50px;
+}
+#banner{
+  background: url('images/background.jpg') no-repeat center;
+  background-size: cover;
+  text-align: center;
+  color: #f8f8f8;
+}
+#banner_content{
+  margin-top: 20%;
+  margin-bottom: 20%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 6px;
+}
+.form_container{
+  margin-top: 8%;
+  margin-bottom: 8%;
+}
+.login_form_container{
+  margin-top: 11%;
+  margin-bottom: 11%;
+}
+footer{
+  padding: 10px 0;
+  width: 100%;
+  background-color: #101010;
+  color: #9d9d9d;
+}
