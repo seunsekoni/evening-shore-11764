@@ -34,22 +34,22 @@ require 'includes/header.php';
                     while ($row = mysqli_fetch_assoc($run_sel)) {
                         ?>
 
-                               <div class = "col-md-3 col-sm-4 col-xs-6">
-                                <div class = "thumbnail">
-                                <img src="images/<?php echo $row['image_name']?>" alt="<?php echo $row['image_name']?>"/>
-                                <div class="caption row text-center">
-                                    <h3><?php echo $row['item_name']; ?></h3>
-                                    <p>price NGN<?php echo $row['price']; ?>.00</p>
-                                <?php
-                                    if (isset($_SESSION['email'])) {
-                                        if (cart_check($row['id'])) { ?>
-                                        <a class="btn btn-default btn-block disabled" href="#">Added to cart</a>
-                                        <?php } else {
-                                        $add = "includes/add_cart.php?id=".$row['id']; ?>
-                                        <a class="btn btn-primary btn-block" href="<?php echo $add;?>">Add to cart</a>
-                                        <?php }
-                                        } else { ?>
-                                        <a class="btn btn-primary btn-block" href="login.php">Buy Now </a>
+                        <div class = "col-md-3 col-sm-4 col-xs-6">
+                        <div class = "thumbnail">
+                        <img src="images/<?php echo $row['image_name']?>" alt="<?php echo $row['image_name']?>"/>
+                        <div class="caption row text-center">
+                            <h3><?php echo $row['item_name']; ?></h3>
+                            <p>price NGN<?php echo $row['price']; ?>.00</p>
+                        <?php
+                            if (isset($_SESSION['email'])) {
+                                if (cart_check($row['id'])) { ?>
+                                <a class="btn btn-default btn-block disabled" href="#">Added to cart</a>
+                                <?php } else {
+                                $add = "includes/add_cart.php?id=".$row['id']; ?>
+                                <a class="btn btn-primary btn-block" href="<?php echo $add;?>">Add to cart</a>
+                                <?php }
+                                } else { ?>
+                                <a class="btn btn-primary btn-block" href="login.php">Buy Now </a>
                     <?php
                         }  ?>
                   </div>
